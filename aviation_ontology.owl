@@ -27,14 +27,264 @@
         <Literal datatypeIRI="&rdf;PlainLiteral">Ontology for Aviation and Aircraft Preliminary Design</Literal>
     </Annotation>
     <Declaration>
+        <Class IRI="#AirbusGrossReferenceArea"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Aircraft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AircraftComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AircraftComponentParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AircraftManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AircraftParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Airplane"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AirplaneManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Company"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Component"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ComponentParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FixedWingAircraft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FixedWingAircraftComponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FixedWingAircraftComponentParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FixedWingAircraftManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FixedWingAircraftParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GliderManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Helicopter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HelicopterManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiftCoefficient"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Manufacturer"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Parameter"/>
     </Declaration>
+    <Declaration>
+        <Class IRI="#PianoGrossReferenceArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PoweredAircraft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RotaryWingAircraft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RotaryWingAircraftManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrapezoidalReferenceArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UnpoweredAircraft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WimpressReferenceArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WingParameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WingReferenceArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WingWettedArea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A320-100"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Airbus"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AirbusGrossReferenceArea"/>
+        <Class IRI="#WingReferenceArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AircraftComponent"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AircraftComponentParameter"/>
+        <Class IRI="#ComponentParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AircraftManufacturer"/>
+        <Class IRI="#Manufacturer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AircraftParameter"/>
+        <Class IRI="#ComponentParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Airplane"/>
+        <Class IRI="#FixedWingAircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Airplane"/>
+        <Class IRI="#PoweredAircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AirplaneManufacturer"/>
+        <Class IRI="#FixedWingAircraftManufacturer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComponentParameter"/>
+        <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FixedWingAircraft"/>
+        <Class IRI="#Aircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FixedWingAircraftComponent"/>
+        <Class IRI="#AircraftComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FixedWingAircraftComponentParameter"/>
+        <Class IRI="#AircraftComponentParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FixedWingAircraftManufacturer"/>
+        <Class IRI="#AircraftManufacturer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FixedWingAircraftParameter"/>
+        <Class IRI="#AircraftParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GliderManufacturer"/>
+        <Class IRI="#FixedWingAircraftManufacturer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Helicopter"/>
+        <Class IRI="#PoweredAircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Helicopter"/>
+        <Class IRI="#RotaryWingAircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HelicopterManufacturer"/>
+        <Class IRI="#RotaryWingAircraftManufacturer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiftCoefficient"/>
+        <Class IRI="#WingParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiftCoefficient"/>
+        <Class IRI="http://purl.oclc.org/NET/ssnx/qu/dim#Dimensionless"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Manufacturer"/>
+        <Class IRI="#Company"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PianoGrossReferenceArea"/>
+        <Class IRI="#WingReferenceArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PoweredAircraft"/>
+        <Class IRI="#Aircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RotaryWingAircraft"/>
+        <Class IRI="#Aircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RotaryWingAircraftManufacturer"/>
+        <Class IRI="#AircraftManufacturer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrapezoidalReferenceArea"/>
+        <Class IRI="#WingReferenceArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UnpoweredAircraft"/>
+        <Class IRI="#Aircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WimpressReferenceArea"/>
+        <Class IRI="#WingReferenceArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wing"/>
+        <Class IRI="#FixedWingAircraftComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WingParameter"/>
+        <Class IRI="#FixedWingAircraftComponentParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WingReferenceArea"/>
+        <Class IRI="#WingParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WingReferenceArea"/>
+        <Class IRI="http://purl.oclc.org/NET/ssnx/qu/dim#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WingWettedArea"/>
+        <Class IRI="#WingParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WingWettedArea"/>
+        <Class IRI="http://purl.oclc.org/NET/ssnx/qu/dim#Area"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AirbusGrossReferenceArea"/>
+        <Class IRI="#PianoGrossReferenceArea"/>
+        <Class IRI="#TrapezoidalReferenceArea"/>
+        <Class IRI="#WimpressReferenceArea"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Airplane"/>
+        <NamedIndividual IRI="#A320-100"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AirplaneManufacturer"/>
+        <NamedIndividual IRI="#Airbus"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#HelicopterManufacturer"/>
+        <NamedIndividual IRI="#Airbus"/>
+    </ClassAssertion>
 </Ontology>
 
 
