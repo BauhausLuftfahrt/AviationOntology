@@ -17,10 +17,11 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://bauhaus-luftfahrt.net/aviation"
      versionIRI="http://bauhaus-luftfahrt.net/aviation/0.0.1">
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://purl.oclc.org/NET/ssnx/qu/qu-rec20</Import>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
@@ -60,6 +61,24 @@
         <Class IRI="#ComponentParameter"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#CompoundTaperedWing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElectricEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EllipticalWing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Empennage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Engine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExternalCombustionEngine"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#FixedWingAircraft"/>
     </Declaration>
     <Declaration>
@@ -75,13 +94,22 @@
         <Class IRI="#FixedWingAircraftParameter"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Fuselage"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#GliderManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeatEngine"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Helicopter"/>
     </Declaration>
     <Declaration>
         <Class IRI="#HelicopterManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InternalCombustionEngine"/>
     </Declaration>
     <Declaration>
         <Class IRI="#LiftCoefficient"/>
@@ -93,10 +121,25 @@
         <Class IRI="#Parameter"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PianoGrossReferenceArea"/>
+        <Class IRI="#PistonEngine"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PoweredAircraft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PropfanEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RamjetEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReactionEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RectangularWing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReverseTaperedWing"/>
     </Declaration>
     <Declaration>
         <Class IRI="#RotaryWingAircraft"/>
@@ -105,10 +148,37 @@
         <Class IRI="#RotaryWingAircraftManufacturer"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ScramjetEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShaftEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaperedWing"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#TrapezoidalReferenceArea"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#TurbofanEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TurbojetEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TurbopropEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TurboshaftEngine"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#UnpoweredAircraft"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WankelEngine"/>
     </Declaration>
     <Declaration>
         <Class IRI="#WimpressReferenceArea"/>
@@ -126,6 +196,21 @@
         <Class IRI="#WingWettedArea"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasAircraftComponent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDirectPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDirectPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#A320-100"/>
     </Declaration>
     <Declaration>
@@ -134,6 +219,17 @@
     <SubClassOf>
         <Class IRI="#AirbusGrossReferenceArea"/>
         <Class IRI="#WingReferenceArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aircraft"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aircraft"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Component"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AircraftComponent"/>
@@ -164,8 +260,43 @@
         <Class IRI="#FixedWingAircraftManufacturer"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Component"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Component"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Component"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#ComponentParameter"/>
         <Class IRI="#Parameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CompoundTaperedWing"/>
+        <Class IRI="#Wing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElectricEngine"/>
+        <Class IRI="#Engine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EllipticalWing"/>
+        <Class IRI="#Wing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Empennage"/>
+        <Class IRI="#FixedWingAircraftComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Engine"/>
+        <Class IRI="#Component"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExternalCombustionEngine"/>
+        <Class IRI="#HeatEngine"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FixedWingAircraft"/>
@@ -188,8 +319,16 @@
         <Class IRI="#AircraftParameter"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Fuselage"/>
+        <Class IRI="#FixedWingAircraftComponent"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#GliderManufacturer"/>
         <Class IRI="#FixedWingAircraftManufacturer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeatEngine"/>
+        <Class IRI="#Engine"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Helicopter"/>
@@ -204,6 +343,10 @@
         <Class IRI="#RotaryWingAircraftManufacturer"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#InternalCombustionEngine"/>
+        <Class IRI="#HeatEngine"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#LiftCoefficient"/>
         <Class IRI="#WingParameter"/>
     </SubClassOf>
@@ -216,12 +359,44 @@
         <Class IRI="#Company"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PianoGrossReferenceArea"/>
-        <Class IRI="#WingReferenceArea"/>
+        <Class IRI="#PistonEngine"/>
+        <Class IRI="#InternalCombustionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PistonEngine"/>
+        <Class IRI="#ShaftEngine"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PoweredAircraft"/>
         <Class IRI="#Aircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PropfanEngine"/>
+        <Class IRI="#InternalCombustionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PropfanEngine"/>
+        <Class IRI="#ReactionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RamjetEngine"/>
+        <Class IRI="#InternalCombustionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RamjetEngine"/>
+        <Class IRI="#ReactionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReactionEngine"/>
+        <Class IRI="#HeatEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RectangularWing"/>
+        <Class IRI="#Wing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReverseTaperedWing"/>
+        <Class IRI="#Wing"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RotaryWingAircraft"/>
@@ -232,12 +407,63 @@
         <Class IRI="#AircraftManufacturer"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ScramjetEngine"/>
+        <Class IRI="#RamjetEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShaftEngine"/>
+        <Class IRI="#HeatEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#System"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#System"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaperedWing"/>
+        <Class IRI="#Wing"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#TrapezoidalReferenceArea"/>
         <Class IRI="#WingReferenceArea"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#TurbofanEngine"/>
+        <Class IRI="#InternalCombustionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TurbofanEngine"/>
+        <Class IRI="#ReactionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TurbojetEngine"/>
+        <Class IRI="#InternalCombustionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TurbojetEngine"/>
+        <Class IRI="#ReactionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TurbopropEngine"/>
+        <Class IRI="#ShaftEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TurboshaftEngine"/>
+        <Class IRI="#ShaftEngine"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#UnpoweredAircraft"/>
         <Class IRI="#Aircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WankelEngine"/>
+        <Class IRI="#InternalCombustionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WankelEngine"/>
+        <Class IRI="#ShaftEngine"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WimpressReferenceArea"/>
@@ -268,10 +494,19 @@
         <Class IRI="http://purl.oclc.org/NET/ssnx/qu/dim#Area"/>
     </SubClassOf>
     <DisjointClasses>
-        <Class IRI="#AirbusGrossReferenceArea"/>
-        <Class IRI="#PianoGrossReferenceArea"/>
-        <Class IRI="#TrapezoidalReferenceArea"/>
-        <Class IRI="#WimpressReferenceArea"/>
+        <Class IRI="#CompoundTaperedWing"/>
+        <Class IRI="#EllipticalWing"/>
+        <Class IRI="#RectangularWing"/>
+        <Class IRI="#ReverseTaperedWing"/>
+        <Class IRI="#TaperedWing"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ExternalCombustionEngine"/>
+        <Class IRI="#InternalCombustionEngine"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#ReactionEngine"/>
+        <Class IRI="#ShaftEngine"/>
     </DisjointClasses>
     <ClassAssertion>
         <Class IRI="#Airplane"/>
@@ -285,6 +520,66 @@
         <Class IRI="#HelicopterManufacturer"/>
         <NamedIndividual IRI="#Airbus"/>
     </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAircraftComponent"/>
+        <ObjectProperty IRI="#hasDirectPart"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDirectPart"/>
+        <ObjectProperty IRI="#hasPart"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isDirectPartOf"/>
+        <ObjectProperty IRI="#isPartOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasDirectPart"/>
+        <ObjectProperty IRI="#isDirectPartOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPart"/>
+        <ObjectProperty IRI="#isPartOf"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isDirectPartOf"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDirectPart"/>
+    </InverseFunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasDirectPart"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isDirectPartOf"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasPart"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isPartOf"/>
+    </TransitiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#hasDirectPart"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isDirectPartOf"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
 </Ontology>
 
 
