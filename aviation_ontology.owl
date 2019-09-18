@@ -37,7 +37,7 @@
         <Class IRI="#AircraftComponent"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#AircraftComponentParameter"/>
+        <Class IRI="#AircraftFamily"/>
     </Declaration>
     <Declaration>
         <Class IRI="#AircraftManufacturer"/>
@@ -82,22 +82,10 @@
         <Class IRI="#FixedWingAircraft"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#FixedWingAircraftComponent"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FixedWingAircraftComponentParameter"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#FixedWingAircraftManufacturer"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#FixedWingAircraftParameter"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Fuselage"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GliderManufacturer"/>
     </Declaration>
     <Declaration>
         <Class IRI="#HeatEngine"/>
@@ -112,13 +100,31 @@
         <Class IRI="#InternalCombustionEngine"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Landing_Gear"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Length"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#LiftCoefficient"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Manufacturer"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Multicopter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MulticopterManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NumericalParameter"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Parameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParameterType"/>
     </Declaration>
     <Declaration>
         <Class IRI="#PistonEngine"/>
@@ -128,6 +134,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#PropfanEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Quadrocopter"/>
     </Declaration>
     <Declaration>
         <Class IRI="#RamjetEngine"/>
@@ -152,6 +161,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#ShaftEngine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Span"/>
     </Declaration>
     <Declaration>
         <Class IRI="#System"/>
@@ -196,7 +208,7 @@
         <Class IRI="#WingWettedArea"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasAircraftComponent"/>
+        <ObjectProperty IRI="#describes"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasDirectPart"/>
@@ -205,17 +217,98 @@
         <ObjectProperty IRI="#hasPart"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isDirectPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isManufacturedBy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPartOf"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#manufactures"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#A320-100"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A320neo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A320neo_Empennage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A320neo_Family"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A320neo_Fuselage"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A320neo_Landing_Gear"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A320neo_Span"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#A320neo_Wing"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Airbus"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#EHANG_Inc."/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Volocopter_2X"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Volocopter_GmbH"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AircraftManufacturer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manufactures"/>
+            <Class IRI="#Aircraft"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AirplaneManufacturer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manufactures"/>
+            <Class IRI="#Airplane"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FixedWingAircraftManufacturer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manufactures"/>
+            <Class IRI="#FixedWingAircraft"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#HelicopterManufacturer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manufactures"/>
+            <Class IRI="#Helicopter"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#MulticopterManufacturer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manufactures"/>
+            <Class IRI="#Multicopter"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RotaryWingAircraftManufacturer"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#manufactures"/>
+            <Class IRI="#RotaryWingAircraft"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#AirbusGrossReferenceArea"/>
         <Class IRI="#WingReferenceArea"/>
@@ -236,16 +329,12 @@
         <Class IRI="#Component"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#AircraftComponentParameter"/>
-        <Class IRI="#ComponentParameter"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#AircraftManufacturer"/>
         <Class IRI="#Manufacturer"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#AircraftParameter"/>
-        <Class IRI="#ComponentParameter"/>
+        <Class IRI="#Parameter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Airplane"/>
@@ -288,7 +377,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Empennage"/>
-        <Class IRI="#FixedWingAircraftComponent"/>
+        <Class IRI="#AircraftComponent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Engine"/>
@@ -303,28 +392,12 @@
         <Class IRI="#Aircraft"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#FixedWingAircraftComponent"/>
-        <Class IRI="#AircraftComponent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FixedWingAircraftComponentParameter"/>
-        <Class IRI="#AircraftComponentParameter"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#FixedWingAircraftManufacturer"/>
         <Class IRI="#AircraftManufacturer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#FixedWingAircraftParameter"/>
-        <Class IRI="#AircraftParameter"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Fuselage"/>
-        <Class IRI="#FixedWingAircraftComponent"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GliderManufacturer"/>
-        <Class IRI="#FixedWingAircraftManufacturer"/>
+        <Class IRI="#AircraftComponent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#HeatEngine"/>
@@ -347,6 +420,18 @@
         <Class IRI="#HeatEngine"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Landing_Gear"/>
+        <Class IRI="#AircraftComponent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Length"/>
+        <Class IRI="#AircraftParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Length"/>
+        <Class IRI="#NumericalParameter"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#LiftCoefficient"/>
         <Class IRI="#WingParameter"/>
     </SubClassOf>
@@ -357,6 +442,33 @@
     <SubClassOf>
         <Class IRI="#Manufacturer"/>
         <Class IRI="#Company"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Multicopter"/>
+        <Class IRI="#PoweredAircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Multicopter"/>
+        <Class IRI="#RotaryWingAircraft"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MulticopterManufacturer"/>
+        <Class IRI="#RotaryWingAircraftManufacturer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NumericalParameter"/>
+        <Class IRI="#ParameterType"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NumericalParameter"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="http://purl.oclc.org/NET/ssnx/qu/qu#numericalValue"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParameterType"/>
+        <Class IRI="#Parameter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PistonEngine"/>
@@ -377,6 +489,10 @@
     <SubClassOf>
         <Class IRI="#PropfanEngine"/>
         <Class IRI="#ReactionEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Quadrocopter"/>
+        <Class IRI="#Multicopter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RamjetEngine"/>
@@ -413,6 +529,14 @@
     <SubClassOf>
         <Class IRI="#ShaftEngine"/>
         <Class IRI="#HeatEngine"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Span"/>
+        <Class IRI="#AircraftParameter"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Span"/>
+        <Class IRI="#NumericalParameter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#System"/>
@@ -471,11 +595,11 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Wing"/>
-        <Class IRI="#FixedWingAircraftComponent"/>
+        <Class IRI="#AircraftComponent"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WingParameter"/>
-        <Class IRI="#FixedWingAircraftComponentParameter"/>
+        <Class IRI="#ComponentParameter"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WingReferenceArea"/>
@@ -493,6 +617,16 @@
         <Class IRI="#WingWettedArea"/>
         <Class IRI="http://purl.oclc.org/NET/ssnx/qu/dim#Area"/>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#AircraftFamily"/>
+        <Class IRI="#Company"/>
+        <Class IRI="#Parameter"/>
+        <Class IRI="#System"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#AircraftParameter"/>
+        <Class IRI="#ComponentParameter"/>
+    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#CompoundTaperedWing"/>
         <Class IRI="#EllipticalWing"/>
@@ -513,17 +647,84 @@
         <NamedIndividual IRI="#A320-100"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#AirplaneManufacturer"/>
+        <Class IRI="#Airplane"/>
+        <NamedIndividual IRI="#A320neo"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Empennage"/>
+        <NamedIndividual IRI="#A320neo_Empennage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AircraftFamily"/>
+        <NamedIndividual IRI="#A320neo_Family"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fuselage"/>
+        <NamedIndividual IRI="#A320neo_Fuselage"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Landing_Gear"/>
+        <NamedIndividual IRI="#A320neo_Landing_Gear"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Span"/>
+        <NamedIndividual IRI="#A320neo_Span"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CompoundTaperedWing"/>
+        <NamedIndividual IRI="#A320neo_Wing"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Manufacturer"/>
         <NamedIndividual IRI="#Airbus"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#HelicopterManufacturer"/>
-        <NamedIndividual IRI="#Airbus"/>
+        <Class IRI="#Manufacturer"/>
+        <NamedIndividual IRI="#EHANG_Inc."/>
     </ClassAssertion>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasAircraftComponent"/>
+    <ClassAssertion>
+        <Class IRI="#Multicopter"/>
+        <NamedIndividual IRI="#Volocopter_2X"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Manufacturer"/>
+        <NamedIndividual IRI="#Volocopter_GmbH"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasDirectPart"/>
-    </SubObjectPropertyOf>
+        <NamedIndividual IRI="#A320neo"/>
+        <NamedIndividual IRI="#A320neo_Fuselage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDirectPart"/>
+        <NamedIndividual IRI="#A320neo"/>
+        <NamedIndividual IRI="#A320neo_Wing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasDirectPart"/>
+        <NamedIndividual IRI="#A320neo"/>
+        <NamedIndividual IRI="#A320neo_Landing_Gear"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isManufacturedBy"/>
+        <NamedIndividual IRI="#A320neo"/>
+        <NamedIndividual IRI="#Airbus"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#manufactures"/>
+        <NamedIndividual IRI="#Airbus"/>
+        <NamedIndividual IRI="#A320-100"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isManufacturedBy"/>
+        <NamedIndividual IRI="#Volocopter_2X"/>
+        <NamedIndividual IRI="#Volocopter_GmbH"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://purl.oclc.org/NET/ssnx/qu/qu#numericalValue"/>
+        <NamedIndividual IRI="#A320neo_Span"/>
+        <Literal datatypeIRI="&xsd;double">35.8</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasDirectPart"/>
         <ObjectProperty IRI="#hasPart"/>
@@ -532,6 +733,10 @@
         <ObjectProperty IRI="#isDirectPartOf"/>
         <ObjectProperty IRI="#isPartOf"/>
     </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#describes"/>
+        <ObjectProperty IRI="#isDescribedBy"/>
+    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasDirectPart"/>
         <ObjectProperty IRI="#isDirectPartOf"/>
@@ -539,6 +744,10 @@
     <InverseObjectProperties>
         <ObjectProperty IRI="#hasPart"/>
         <ObjectProperty IRI="#isPartOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#manufactures"/>
+        <ObjectProperty IRI="#isManufacturedBy"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isDirectPartOf"/>
@@ -553,10 +762,16 @@
         <ObjectProperty IRI="#isDirectPartOf"/>
     </AsymmetricObjectProperty>
     <TransitiveObjectProperty>
+        <ObjectProperty IRI="#describes"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
         <ObjectProperty IRI="#hasPart"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#isPartOf"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#manufactures"/>
     </TransitiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#hasDirectPart"/>
